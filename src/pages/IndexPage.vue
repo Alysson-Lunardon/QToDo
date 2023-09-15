@@ -72,12 +72,16 @@ export default {
       this.editInput.item = this.list[index];
       this.editInput.index = index;
     },
-    /* ESTUDANDO PRA FAZER DIREITO!!:)
-    salvaEdit(index) {
-      this.list.map(editInput, index);
+
+    salvaEdit() {
+      this.list = this.list.map((item, index) => {
+        if (index === this.editInput.index) {
+          item = this.editInput.item;
+        }
+        return item;
+      });
       this.showDialog = false;
-      console.log(this.editInput);
-    },*/
+    },
   },
 };
 </script>
